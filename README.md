@@ -6,7 +6,7 @@
 ---
 
 ## 📜 Descrição
-Implementação em Java de um **Perceptron** para resolver problemas clássicos de portas lógicas (AND, OR, XOR) e um problema de movimentação de robô, como parte do Trabalho Prático 3 da disciplina de Redes Neurais Artificiais.
+Implementação em Java de um **Perceptron** para resolver problemas clássicos de portas lógicas (AND, OR, XOR) e um problema de movimentação de robô.
 
 ---
 
@@ -50,23 +50,14 @@ A função de ativação utilizada é a sigmóide logística.
 
 O treinamento ajusta os pesos com base no erro entre a saída desejada e a saída obtida.
 
-Taxa de aprendizado (ni) = 0.3.
+Em cada época:
 
-Treinamento de até 10.000 épocas.
+- Calcula o erro de aproximação (diferença entre saída esperada e obtida).
 
-📊 Exemplo de Saída (Porta AND)
-```python-repl
-1 - 1.8234
-2 - 1.6521  
-.....
-9999 - 0.0000
-```
+- Converte a saída para valores binários (threshold em 0.5).
+
+- Conta o erro de classificação (se a saída binária não bate com a esperada).
 
 📌 Observações
 Para testar outra base, altere o array base no início de RnaMain.java.
 
-O número de entradas e saídas do Perceptron deve ser ajustado no construtor:
-
-```java
-Perceptron rna = new Perceptron(2, 1); // Ex.: AND, OR, XOR
-Perceptron rna = new Perceptron(3, 2); // Ex.: Robô
